@@ -1,0 +1,116 @@
+.clc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-between-key);
+  width: clamp(368px,100%, 400px);
+  height: clamp(660px,100%, 30em);
+  background: #3a393b;
+  box-shadow: 0px 0px 10px #0e0e11;
+  border-radius: 4px;
+  padding: 1em;
+}
+.clc__screen {
+  width: 100%;
+  height: 20%;
+  background: #a7af7c;
+  border-radius: 3px;
+  display:grid;
+  place-items: center;
+}
+.clc__screen .screenInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 60px;
+  text-align: right;
+  font-family: "Quantico", sans-serif;
+  color: #44445a;
+  overflow: hidden;
+}
+button {
+  position: relative;
+  flex: 1;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: larger;
+}
+button:before{
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  bottom: 14px;
+  right: 12px;
+  background-color: linear-gradient(90deg, #2d2d2d,#4d4d4d);
+}
+button:active {
+  filter: brightness(90%);
+}
+.clc__buttons {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap:var(--gap-between-key);
+  width: 100%;
+  height: 80%;
+}
+.clc__btns {
+  position: relative;
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: var(--columns-btn);
+  gap:var(--gap-between-key);
+}
+.clc__operations {
+  position: relative;
+  grid-column: 4/5;
+  grid-row: 1/6;
+  display: grid;
+  grid-template-columns: var(--columns-btn);
+  gap:var(--gap-between-key);
+}
+.clc__operations button {
+  flex: 1;
+  font-size: 30px;
+  font-weight: 300;
+}
+.clc__nums {
+  position: relative;
+  grid-column: 1/4;
+  grid-row: 2/6;
+  display: grid;
+  grid-template-columns: var(--columns-btn);
+  gap:var(--gap-between-key);
+
+}
+.clc__nums button {
+  flex: 1;
+  flex-basis: 70px;
+}
+
+@media screen and (max-width: 500px) {
+  .clc {
+    padding: 0;
+    height: 100%;
+  }
+  .clc__nums button {
+    flex-basis: 95px;
+  }
+  .clc__screen {
+    height: 30%;
+  }
+  .clc__screen .screenInput {
+    width: 100%;
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 382px) {
+  .clc__nums button {
+    flex-basis: 80px;
+  }
+}
